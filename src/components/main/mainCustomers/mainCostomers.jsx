@@ -20,6 +20,13 @@ function MainCostomers() {
     document.getElementById('costBtn').style.display = "none"
   }
 
+  const goLink = () => {
+    document.getElementById('contacts').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+
   return (
     <div id="customers" className="main-costomers padd-block">
       <div className="conteiner">
@@ -28,9 +35,9 @@ function MainCostomers() {
             <div className="main-costomers-content-left">
               <div className="main-costomers-content-left-title">
                 <div className="title">Customers</div>
-                <TwoButton dataDa={".main-costomers-inner,640"} text={'Get in touch'}/>
+                <TwoButton onClick={goLink} dataDa={".main-costomers-inner,640"} text={'Get in touch'}/>
               </div>
-              <div className="desc">Lorem ipsum dolor sit amet consectetur.<br/>Tempor adipiscing vulputate id sed risus<br/>venenatis fusce pharetra faucibus. </div>
+              <div className="main-costomers-content-left-desc desc">Feel free to contact our customers or previous employers to obtain their thoughts about cooperation with us.</div>
             </div>
           </div>
           <div className="main-costomers-list">

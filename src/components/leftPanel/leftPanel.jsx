@@ -1,7 +1,7 @@
 import img from '../../image/Vector (18).svg'
 import tg from '../../image/Vector (9).svg'
 import viber from '../../image/Subtract (4).svg'
-import wat from '../../image/Vector (10).svg'
+import wat from '../../image/Vector (19).svg'
 
 function LeftPanel() {
 
@@ -28,13 +28,13 @@ function LeftPanel() {
               <a href='/' className="header-link links">as@7ya.ee</a>
               <a href='/' className="header-link links">+372 58 330637</a>
               <div className="left-panel-links-soc">
-                <a href='/' className="header-link-soc links">
+                <a href='https://t.me/+37258330637' target="_blank" rel="noreferrer" className="header-link-soc links">
                   <img src={tg} alt="" />
                 </a>
-                <a href='/' className="header-link-soc links">
+                <a href='https://wa.me/+37258330637' target="_blank" rel="noreferrer" className="header-link-soc links">
                   <img src={viber} alt="" />
                 </a>
-                <a href='/' className="header-link-soc links">
+                <a href='https://wa.me/+37258330637' target="_blank" rel="noreferrer" className="header-link-soc links">
                   <img src={wat} alt="" />
                 </a>
               </div>

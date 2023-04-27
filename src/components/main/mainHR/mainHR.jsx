@@ -18,7 +18,7 @@ function MainHR() {
   const states = () => {
     if (window.innerWidth < 640) return items.slice(0,2)
     if (window.innerWidth < 960) return items.slice(0,4)
-    if (window.innerWidth > 960) return items.slice(0,6)
+    if (window.innerWidth > 960) return items.slice(0,9)
   }
   
   const [state, setState] = useState(states())
@@ -35,7 +35,7 @@ function MainHR() {
         <div className="main-hr-inner">
           <div className="main-hr-title">
             <div className="title">Human Resources</div>
-            <div className="desc">Lorem ipsum dolor sit amet consectetur.<br/>Tempor adipiscing vulputate id sed risus<br/>venenatis fusce pharetra faucibus. </div>
+            <div className="desc">Trusted people you can trust!</div>
           </div>
           <div className="main-hr-list">
             {state.map((item, index) => 

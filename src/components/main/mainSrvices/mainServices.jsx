@@ -12,6 +12,12 @@ function MainServices() {
     {title: 'Service 1', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '}
   ]
 
+  const goLink = () => {
+    document.getElementById('contacts').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
 
   return (
     <div id="services" className="main-services color-bclokblack padd-block">
@@ -21,9 +27,9 @@ function MainServices() {
             <div className="main-services-content-left">
               <div className="main-services-content-left-title">
                 <div className="title">Services</div>
-                <TwoButton  dataDa={'.main-services-inner,640'} text={'Get in touch'}/>
+                <TwoButton onClick={goLink}  dataDa={'.main-services-inner,640'} text={'Get in touch'}/>
               </div>
-              <div className="desc">Lorem ipsum dolor sit amet consectetur.<br/>Tempor adipiscing vulputate id sed risus<br/>venenatis fusce pharetra faucibus. </div>
+              <div className="main-services-content-left-title-desc desc">We have experience since 2004 and guarantee professional and high-quality performance of services</div>
             </div>
           </div>
           <div className="main-services-list">

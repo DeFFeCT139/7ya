@@ -27,6 +27,13 @@ function MainPartners() {
     document.getElementById('patrnerBtn').style.display = "none"
   }
 
+  const goLink = () => {
+    document.getElementById('contacts').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+
   return (
     <div id="partners" className="main-parners color-bclok padd-block">
       <div className="conteiner">
@@ -35,9 +42,9 @@ function MainPartners() {
             <div className="main-parners-content-left">
               <div className="main-parners-content-left-title">
                 <div className="title">Partners</div>
-                <OneButton dataDa={".main-parners-inner,640"} text={'Get in touch'}/>
+                <OneButton onClick={goLink} dataDa={".main-parners-inner,640"} text={'Get in touch'}/>
               </div>
-              <div className="desc">Lorem ipsum dolor sit amet consectetur.<br/>Tempor adipiscing vulputate id sed risus<br/>venenatis fusce pharetra faucibus. </div>
+              <div className="desc">Companies we work with</div>
             </div>
           </div>
           <div className="main-parners-list">

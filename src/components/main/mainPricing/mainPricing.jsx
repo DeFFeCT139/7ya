@@ -3,6 +3,12 @@ import img from '../../../image/Vector (13).svg'
 
 
 function MainPricing() {
+  const goLink = () => {
+    document.getElementById('contacts').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
   return (
     <div id="pricing" className="main-pricing padd-block">
       <div className="conteiner">
@@ -13,7 +19,7 @@ function MainPricing() {
             </div>
             <div className="desc">During the years of work we got convinced that its not possible to satisfy all 3 main demands of a customer at the same time, like High Quality in a Short Time for a Low Cost. So we are using “Iron Triangle” during negotiations and planning.</div>
             <div className="main-pricing-btn">
-              <TwoButton dataDa={".main-pricing-inner,640"} text={'Get in touch'}/>
+              <TwoButton onClick={goLink} dataDa={".main-pricing-inner,640"} text={'Get in touch'}/>
             </div>
           </div>
           <div className="main-pricing-right">

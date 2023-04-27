@@ -3,6 +3,7 @@
   font-family: 'Rubik', sans-serif;
   box-sizing: border-box;
   color: #FFFFFF;
+  text-decoration: none;
 }
 html {
   scroll-behavior: smooth;
@@ -56,12 +57,19 @@ body::-webkit-scrollbar-thumb {
 
 /* Header*/
 .header{
+  z-index: 2;
   position: fixed;
   width: 100%;
   transition: 200ms;
 }
+.main-start-left-desc{
+  max-width: 530px;
+}
 .header-bg2{
   background-color: var(--bg2) !important;
+  transition: 200ms;
+}
+.header-logo-img{
   transition: 200ms;
 }
 .header-burger{
@@ -69,6 +77,7 @@ body::-webkit-scrollbar-thumb {
 }
 .header-inner{
   height: 100px;
+  transition: 200ms;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,8 +100,23 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Main */
+.main-costomers-content-left-desc{
+  max-width: 409px;
+}
+.main-contact-title-desc{
+  max-width: 350px;
+}
+.start-blure{
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(10px) brightness(60%);
+  padding-bottom: 20px;
+}
+.main-services-content-left-title-desc{
+  max-width: 470px;
+}
 .main-start{
-  background-image: url('../image/Group\ 39.png');
+  background-image: url('../image/ezgif.com-video-to-gif.gif');
   height: 100vh;
   background-size: cover;
   background-position: center bottom;
@@ -401,7 +425,8 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 180px);
+  margin-top: 20px;
 }
 .left-panel-burg{
   width: 100%;
@@ -507,12 +532,18 @@ body::-webkit-scrollbar-thumb {
   .header-links{
     display: none;
   }
+  .main-start-img{
+    margin-top: 30px;
+  }
+  .main-start-btn{
+    margin-top: 20px;
+  }
   .header-links-soc{
     display: none;
   }
   .main-start-inner{
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
     align-items: start;
   }
   .main-start-right{
@@ -640,6 +671,9 @@ body::-webkit-scrollbar-thumb {
   .header-link-soc{
     width: 41px;
   }
+  .conteiner{
+    padding: 0px 33px;
+  }
 }
 @media (max-width: 834px) {
   .main-hr-list{
@@ -657,7 +691,7 @@ body::-webkit-scrollbar-thumb {
     width: 54px;
   }
   .header-logo-img{
-    width: 54px;
+    width: 54px !important;
   }
   .header-link-soc{
     width: 22px;
@@ -683,7 +717,7 @@ body::-webkit-scrollbar-thumb {
     line-height: 24px;
   }
   .header-inner{
-    height: 60px;
+    height: 60px !important;
   }
   .left-panel-burg{
     height: 60px;
@@ -732,7 +766,10 @@ body::-webkit-scrollbar-thumb {
     line-height: 32px;
   }
   .main-contact-info-item-link-img{
-    width: 16px;
+    width: 20px;
+  }
+  .main-contact-info-item-phone > img{
+    width: 20px;
   }
   .main-contact-info-item-link{
     margin: 0px 8px;

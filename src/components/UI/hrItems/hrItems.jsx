@@ -10,7 +10,7 @@ function HrItems({text}) {
         <div className="main-hr-list-item-name">{text.name}</div>
           <div className="main-hr-list-item-title">{text.title}</div>
           <div className="main-hr-list-item-desc">{text.desc}</div>
-          <a href="/" className='main-hr-list-cv'>CV</a>
+          <a href="/" className='main-hr-list-cv'>More info</a>
        </div>
     </div>
   );
