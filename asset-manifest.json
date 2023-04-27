@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/7ya/static/css/main.4ae7181f.css",
+    "main.js": "/7ya/static/js/main.fb058250.js",
+    "static/js/787.f3bd7ddd.chunk.js": "/7ya/static/js/787.f3bd7ddd.chunk.js",
+    "static/media/Group 39.png": "/7ya/static/media/Group 39.36a8807c3fd6d5c67716.png",
+    "static/media/Group 18.png": "/7ya/static/media/Group 18.d2c3fadae8bcd0cdd428.png",
+    "static/media/Vector (13).svg": "/7ya/static/media/Vector (13).ef16cfd7b25e8d46ecf4315c623df70c.svg",
+    "static/media/image 6.svg": "/7ya/static/media/image 6.778d9376ee5f468d26e087ac3b09f8c2.svg",
+    "static/media/Rectangle 4.png": "/7ya/static/media/Rectangle 4.6b14de9837ff6cc4cc10.png",
+    "static/media/Group 44.svg": "/7ya/static/media/Group 44.8ea054697cbebdd6e705.svg",
+    "static/media/Vector (14).svg": "/7ya/static/media/Vector (14).edc22ed9f3ff802d783e190b4054659d.svg",
+    "static/media/Subtract (4).svg": "/7ya/static/media/Subtract (4).879d393a00e52576dc54e4a004bb7ace.svg",
+    "static/media/Vector (11).svg": "/7ya/static/media/Vector (11).2eb24585a87e69c6d0476fbfe4351c6a.svg",
+    "static/media/Vector (10).svg": "/7ya/static/media/Vector (10).b863004729ec4cf8d4d1d30a8c459a18.svg",
+    "static/media/Group 17.svg": "/7ya/static/media/Group 17.bfcdd64d7d740af1d93bdced39d526a9.svg",
+    "static/media/Vector (9).svg": "/7ya/static/media/Vector (9).f43724b68e60411cdbb7edb48cda3f1f.svg",
+    "index.html": "/7ya/index.html",
+    "static/media/Vector (15).svg": "/7ya/static/media/Vector (15).acc7542d8d4d8841882c9583b188e64c.svg",
+    "static/media/Vector (12).svg": "/7ya/static/media/Vector (12).c1ed10857ed85547fb9c6dcde9d9962f.svg",
+    "static/media/Vector (16).svg": "/7ya/static/media/Vector (16).ad1027f9f6543f9ea5e6182dc7bb5863.svg",
+    "static/media/Arrow 1.svg": "/7ya/static/media/Arrow 1.b13af63ec538b0e499e125bf7a233090.svg",
+    "static/media/Vector (17).svg": "/7ya/static/media/Vector (17).d7a2c2f30bd363f519d5db190e60463f.svg",
+    "static/media/Vector (18).svg": "/7ya/static/media/Vector (18).25662209f6aa9e19adab7cc22759706c.svg",
+    "main.4ae7181f.css.map": "/7ya/static/css/main.4ae7181f.css.map",
+    "main.fb058250.js.map": "/7ya/static/js/main.fb058250.js.map",
+    "787.f3bd7ddd.chunk.js.map": "/7ya/static/js/787.f3bd7ddd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ae7181f.css",
+    "static/js/main.fb058250.js"
+  ]
+}
