@@ -63,7 +63,7 @@ function Header() {
             <a target="_blank" rel="noreferrer" href='https://t.me/+37258330637' className="header-link-soc links">
               <img src={tg} alt="" />
             </a>
-            <a target="_blank" rel="noreferrer" href='https://viber://chat?number=%2B37258330637' className="header-link-soc links">
+            <a target="_blank" rel="noreferrer" href='viber://chat?number=%2B37258330637' className="header-link-soc links">
               <img src={viber} alt="" />
             </a>
             <a target="_blank" rel="noreferrer" href='https://wa.me/+37258330637' className="header-link-soc links">

@@ -31,7 +31,7 @@ function LeftPanel() {
                 <a href='https://t.me/+37258330637' target="_blank" rel="noreferrer" className="header-link-soc links">
                   <img src={tg} alt="" />
                 </a>
-                <a href='https://wa.me/+37258330637' target="_blank" rel="noreferrer" className="header-link-soc links">
+                <a href='viber://chat?number=%2B37258330637' target="_blank" rel="noreferrer" className="header-link-soc links">
                   <img src={viber} alt="" />
                 </a>
                 <a href='https://wa.me/+37258330637' target="_blank" rel="noreferrer" className="header-link-soc links">
