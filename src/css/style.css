@@ -369,18 +369,27 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Left Panel */
-.left-panel{
-  z-index: 10;
+.left-panel-block{
+  padding-left: 20px;
   position: fixed;
-  width: 100%;
+  width: 70%;
   transition: 200ms;
   height: 100vh;
-  left: -100%;
+  right: -100%;
+  z-index: 11;
   background-color: var(--bg2);
 }
-.left-panel-actove{
-  left: 0;
+.left-panel-actove > .left-panel-block{
+  right: 0;
   transition: 200ms;
+}
+
+.left-panel-actove{
+  width: 100%;
+  backdrop-filter: brightness(60%);
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
 }
 .left-panel-list-last{
   height: 180px;
@@ -809,5 +818,11 @@ body::-webkit-scrollbar-thumb {
   }
   .main-costomers-list-facke{
     width: 145px;
+  }
+  .header-link{
+    font-size: 20px;
+  }
+  .left-panel-block{
+    padding-left: 10px;
   }
 }

@@ -33,7 +33,10 @@ function Header() {
 
   
 
-  const open = () => document.getElementById('lp').classList.add('left-panel-actove')
+  const open = () => {
+    document.getElementById('lp').classList.add('left-panel-actove')
+    document.querySelector('html').style.overflow = 'hidden'
+  }
 
   return (
     <div id='header' className="header">
