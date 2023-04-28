@@ -7,9 +7,9 @@ function Pages() {
   return (
     <div className="pages">
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/admin" element={<Admin/>}/>
-        <Route path="/admin/preview" element={<Preview/>}/>
+        <Route path="/7ya/" element={<Home/>}/>
+        <Route path="/7ya/admin" element={<Admin/>}/>
+        <Route path="/7ya/admin/preview" element={<Preview/>}/>
       </Routes>
     </div>
   );

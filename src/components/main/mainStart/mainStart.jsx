@@ -17,7 +17,7 @@ function MainStart() {
           <div className="main-start-inner">
             <div className="main-start-left">
               <div className="title">Troubleshooting <br/>since 2004</div>
-              <div className="main-start-left-desc desc">7ya, led by Anatoly Suglobov, offers fish farming industry services since 2004 including troubleshooting, automation system repair, and project management for new or reconstructed buildings with a good reputation.</div>
+              <div className="main-start-left-desc desc">7ya, led by Anatoly Suglobov, offers a variety of service, from troubleshooting and repair of automation systems to a newbuilds or reconstruction projects followups.</div>
               <div className="main-start-btn">
                 <OneButton onClick={goLink} dataDa={".main-start-right,640"} text={'Get in touch'}/>
               </div>

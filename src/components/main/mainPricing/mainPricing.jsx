@@ -1,5 +1,5 @@
 import TwoButton from "../../UI/buttons/twoButton/twoButton";
-import img from '../../../image/Vector (13).svg'
+import img from '../../../image/Vector (23).svg'
 
 
 function MainPricing() {
@@ -17,7 +17,7 @@ function MainPricing() {
             <div className="main-pricing-left-title">
               <div className="title">Pricing</div>
             </div>
-            <div className="desc">During the years of work we got convinced that its not possible to satisfy all 3 main demands of a customer at the same time, like High Quality in a Short Time for a Low Cost. So we are using “Iron Triangle” during negotiations and planning.</div>
+            <div className="desc">Over the years of work, we have come to the conclusion that it's impossible to combine all 3 basic requirements of the customer, like: High Quality in a Short Time for a Low Cost. Therefore, we use the Iron Triangle during negotiations and planning.</div>
             <div className="main-pricing-btn">
               <TwoButton onClick={goLink} dataDa={".main-pricing-inner,640"} text={'Get in touch'}/>
             </div>

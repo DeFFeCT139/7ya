@@ -15,6 +15,12 @@ function MainContact() {
             <div className="main-contact-title-desc desc">You have problems and money, then You are at the right place.</div>
           </div>
           <div className="main-contact-info">
+            <div className="main-contact-info-item main-contact-info-item-mail">
+              <div className="main-contact-info-item-phone">
+                <img src={mail} alt="" />
+                <a href='mailto:as@7ya.ee' className="main-contact-info-item-phone-title">as@7ya.ee</a>
+              </div>
+            </div>
             <div className="main-contact-info-item">
               <div className="main-contact-info-item-phone">
                 <img className='main-contact-info-item-link-img' src={phone} alt="" />
@@ -49,16 +55,6 @@ function MainContact() {
                 </a>
               </div>
             </div>
-            <div className="main-contact-info-item main-contact-info-item-mail">
-              <div className="main-contact-info-item-phone">
-                <img src={mail} alt="" />
-                <a href='mailto:as@7ya.ee' className="main-contact-info-item-phone-title">as@7ya.ee</a>
-              </div>
-            </div>
-          </div>
-          <div className="main-contact-redButton">
-            <OneButton className={'redBtn'} text={'Red button'}/>
-            <div className="main-contact-redButton-desc desc">Kindly ask You to not click on this button, its from<br/>the old website and we dont know what is it<br/>connected to.<br/>So please be wise and dont click on it. It maybe<br/>connected to some critical component, so please<br/>keep the cursor away from it. Thank You.<br/>© Developers.</div>
           </div>
         </div>
       </div>

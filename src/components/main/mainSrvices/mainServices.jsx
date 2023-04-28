@@ -1,16 +1,24 @@
+import { useEffect, useState } from "react";
 import TwoButton from "../../UI/buttons/twoButton/twoButton";
 import ServicesItem from "../../UI/servicesItem/servicesItem";
+import { getDatabase, ref, onValue} from "firebase/database";
 
 function MainServices() {
 
-  let item = [
-    {title: 'Service 1', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {title: 'Service 1', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {title: 'Service 1', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {title: 'Service 1', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {title: 'Service 1', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {title: 'Service 1', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '}
-  ]
+  const [list, setList] = useState([])
+
+  useEffect(()=>{
+    getList()
+  }, [])
+
+  const getList = () => {
+    const db = getDatabase();
+    const starCountRef = ref(db, 'Services/mas/');
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      setList(data)
+    });
+  }
 
   const goLink = () => {
     document.getElementById('contacts').scrollIntoView({
@@ -29,11 +37,10 @@ function MainServices() {
                 <div className="title">Services</div>
                 <TwoButton onClick={goLink}  dataDa={'.main-services-inner,640'} text={'Get in touch'}/>
               </div>
-              <div className="main-services-content-left-title-desc desc">We have experience since 2004 and guarantee professional and high-quality performance of services</div>
             </div>
           </div>
           <div className="main-services-list">
-            {item.map((item, index) => 
+            {list.map((item, index) => 
               <ServicesItem text={item} index={index} key={index}/>
             )}
           </div>

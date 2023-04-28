@@ -34,10 +34,10 @@ function MainCostomers() {
           <div className="main-costomers-content">
             <div className="main-costomers-content-left">
               <div className="main-costomers-content-left-title">
-                <div className="title">Customers</div>
+                <div className="title">Clients & Customers</div>
                 <TwoButton onClick={goLink} dataDa={".main-costomers-inner,640"} text={'Get in touch'}/>
               </div>
-              <div className="main-costomers-content-left-desc desc">Feel free to contact our customers or previous employers to obtain their thoughts about cooperation with us.</div>
+              <div className="main-costomers-content-left-desc desc">Feel free to contact our clients and customers, or previous employers to get their opinion on cooperation with us.</div>
             </div>
           </div>
           <div className="main-costomers-list">

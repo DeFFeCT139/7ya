@@ -35,7 +35,7 @@ function MainHR() {
         <div className="main-hr-inner">
           <div className="main-hr-title">
             <div className="title">Human Resources</div>
-            <div className="desc">Trusted people you can trust!</div>
+            <div className="desc">Trusted people You can trust!</div>
           </div>
           <div className="main-hr-list">
             {state.map((item, index) => 

@@ -1,29 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OneButton from "../../UI/buttons/oneButton/oneButton";
 import PartnersItem from "../../UI/partnersItem/partnersItems";
+import { getDatabase, ref, onValue, get, child} from "firebase/database";
 
 function MainPartners() {
 
-  let items = [
-    {title: 'TS Marine', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus.  ', link: '/'},
-    {title: 'TS Marine', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus.  ', link: '/'},
-    {title: 'TS Marine', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus.  ', link: '/'},
-    {title: 'TS Marine', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus.  ', link: '/'},
-    {title: 'TS Marine', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus.  ', link: '/'},
-    {title: 'TS Marine', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus.  ', link: '/'},
-    {title: 'TS Marine', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus.  ', link: '/'},
-    {title: 'TS Marine', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus.  ', link: '/'}
-  ]
-  const states = () => {
-    if (window.innerWidth < 640) return items.slice(0,4)
-    if (window.innerWidth < 960) return items.slice(0,4)
-    if (window.innerWidth > 960) return items.slice(0,6)
+  const [state, setState] = useState([])
+
+  useEffect(()=>{
+    getList()
+  }, [])
+
+  const getList = () => {
+    const db = getDatabase();
+    const starCountRef = ref(db, 'Partners/mas/');
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val()
+      if (window.innerWidth < 640) {
+        setState(data.slice(0,4))
+        if (data.length <= 4) {
+          document.getElementById('patrnerBtn').style.display = "none"
+        }
+      }
+      if (window.innerWidth < 960) {
+        setState(data.slice(0,4))
+        if (data.length <= 4) {
+          document.getElementById('patrnerBtn').style.display = "none"
+        }
+      }
+      if (window.innerWidth > 960) {
+        setState(data.slice(0,6))
+        if (data.length <= 6) {
+          document.getElementById('patrnerBtn').style.display = "none"
+        }
+      }
+    });
   }
 
-  const [state, setState] = useState(states())
-
   const openHr = () => {
-    setState(items)
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, 'Partners/mas/')).then((snapshot) => {
+      setState(snapshot.val());
+    })
     document.getElementById('patrnerBtn').style.display = "none"
   }
 
@@ -44,7 +62,7 @@ function MainPartners() {
                 <div className="title">Partners</div>
                 <OneButton onClick={goLink} dataDa={".main-parners-inner,640"} text={'Get in touch'}/>
               </div>
-              <div className="desc">Companies we work with</div>
+              <div className="desc">Reliable service and product providers we cooperate with.</div>
             </div>
           </div>
           <div className="main-parners-list">

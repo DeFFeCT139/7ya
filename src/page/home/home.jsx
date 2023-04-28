@@ -9,7 +9,6 @@ function Home() {
       <LeftPanel/>
       <Header/>
       <Main/>
-      <Footer/>
     </div>
   );
 }

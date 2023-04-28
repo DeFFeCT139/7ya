@@ -3,6 +3,7 @@ import MainCostomers from "./mainCustomers/mainCostomers";
 import MainHR from "./mainHR/mainHR";
 import MainPartners from "./mainPartners/mainPartners";
 import MainPricing from "./mainPricing/mainPricing";
+import MainRedBtn from "./mainRedButn/mainRedButn";
 import MainServices from "./mainSrvices/mainServices";
 import MainStart from "./mainStart/mainStart";
 
@@ -16,6 +17,10 @@ function Main() {
       <MainPartners/>
       <MainCostomers/>
       <MainContact/>
+      <MainRedBtn/>
+      <div className="main-bottom">
+        <a href='https://pingwing.ru' className="footer-right-powered">Powered by pingwing.ru</a>
+      </div>
     </div>
   );
 }

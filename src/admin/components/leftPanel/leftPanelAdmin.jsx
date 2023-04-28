@@ -40,7 +40,7 @@ function LeftPanelAdmin() {
             <img src={arrow} alt="" className="LeftPanelAdmin-bottom-link-arrow" />
           </Link>
         </div>
-        <Link to={'/admin/preview'} className="LeftPanelAdmin-bottom-btn">Open preview page</Link>
+        <Link to={'/7ya/admin/preview'} className="LeftPanelAdmin-bottom-btn">Open preview page</Link>
       </div>
     </div>
   );

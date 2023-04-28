@@ -4,6 +4,19 @@ import './css/style.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCKDWjFPe-1YPRrIdG_vNH2YXhJwqZxELc",
+  authDomain: "yasite-a4d66.firebaseapp.com",
+  projectId: "yasite-a4d66",
+  storageBucket: "yasite-a4d66.appspot.com",
+  messagingSenderId: "111954163236",
+  appId: "1:111954163236:web:089b94c856cade1752cab1"
+};
+
+
+initializeApp(firebaseConfig)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

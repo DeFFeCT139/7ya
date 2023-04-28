@@ -9,7 +9,6 @@ function Preview() {
       <LeftPanel/>
       <Header/>
       <Main/>
-      <Footer/>
     </div>
   );
 }

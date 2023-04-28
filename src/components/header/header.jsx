@@ -69,9 +69,9 @@ function Header() {
             <a target="_blank" rel="noreferrer" href='https://wa.me/+37258330637' className="header-link-soc links">
               <img src={wat} alt="" />
             </a>
-            <a data-da=".header-inner,960,0 " href='/' className="header-link-soc links">
+            <div data-da=".header-inner,960,0 " className="header-link-soc links">
               <img src={phone} alt="" />
-            </a>
+            </div>
             <img onClick={open} data-da=".header-inner,960" className='header-burger' src={burger} alt="" />
           </div>
         </div>
