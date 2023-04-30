@@ -22,7 +22,6 @@ function LeftPanelAdmin() {
     const starCountRef = ref(db, 'site/');
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val()
-      console.log(data)
       setState(data)
     })
   }

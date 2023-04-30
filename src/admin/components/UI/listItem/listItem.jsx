@@ -20,7 +20,6 @@ function ListItemAdmin({props, title, index}) {
     get(child(dbRef, `${title}/mas/`)).then((snapshot) => {
       let data = snapshot.val()
       data.splice(index,index === 0? 1 : index)
-      console.log(data)
       const db = getDatabase();
       set(ref(db, `${title}/mas/`), data);
     })
