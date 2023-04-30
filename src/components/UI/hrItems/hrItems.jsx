@@ -8,7 +8,7 @@ function HrItems({text}) {
           <img src={img} className='main-hr-list-item-img' alt="" />
         </div>
         <div className="main-hr-list-item-name">{text.name}</div>
-          <div className="main-hr-list-item-title">{text.title}</div>
+          <div className="main-hr-list-item-title">{text.prof}</div>
           <div className="main-hr-list-item-desc">{text.desc}</div>
           <a href="/" className='main-hr-list-cv'>More info</a>
        </div>

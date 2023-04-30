@@ -1,4 +1,4 @@
-import logo from '../../image/Group 17.svg'
+import logo from '../../image/7ya 1.svg'
 import tg from '../../image/Vector (9).svg'
 import viber from '../../image/Subtract (4).svg'
 import wat from '../../image/Vector (19).svg'
@@ -24,11 +24,11 @@ function Header() {
       if (window.scrollY < window.innerHeight / 2) {
         if (window.scrollY === 0) {
           document.getElementById('header').style.backgroundColor = '#00000000'
-          document.getElementById('logo').style.width = '120px'
+          document.getElementById('logo').style.width = '90px'
           document.getElementById('header-inner').style.height = '100px'
         } else {
           document.getElementById('header').style.backgroundColor = '#191919'
-          document.getElementById('logo').style.width = '54px'
+          document.getElementById('logo').style.width = '44px'
           document.getElementById('header-inner').style.height = '60px'
         }
       }

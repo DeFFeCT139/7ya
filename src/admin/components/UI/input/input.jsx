@@ -1,8 +1,8 @@
-function Input({name,marginTop}) {
+function Input({name,marginTop, id}) {
   return (
-    <div style={{marginTop: marginTop}} className="pageAdmin-input">
+    <div  style={{marginTop: marginTop}} className="pageAdmin-input">
       <div className="pageAdmin-input-title">{name}</div>
-      <input type="text" className="pageAdmin-input-input"/>
+      <input id={id} type="text" className="pageAdmin-input-input"/>
     </div>
   );
 }

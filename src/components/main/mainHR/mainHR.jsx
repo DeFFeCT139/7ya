@@ -1,31 +1,50 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import HrItems from '../../UI/hrItems/hrItems';
 import OneButton from '../../UI/buttons/oneButton/oneButton';
+import { getDatabase, ref, onValue, get, child} from "firebase/database";
+
 
 function MainHR() {
+ 
 
-  let items = [
-    {name: 'Anatoly Suglobov', title: 'Troubleshooter/ Consultant', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {name: 'Anatoly Suglobov', title: 'Troubleshooter/ Consultant', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {name: 'Anatoly Suglobov', title: 'Troubleshooter/ Consultant', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {name: 'Anatoly Suglobov', title: 'Troubleshooter/ Consultant', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {name: 'Anatoly Suglobov', title: 'Troubleshooter/ Consultant', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {name: 'Anatoly Suglobov', title: 'Troubleshooter/ Consultant', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {name: 'Anatoly Suglobov', title: 'Troubleshooter/ Consultant', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-    {name: 'Anatoly Suglobov', title: 'Troubleshooter/ Consultant', desc: 'Lorem ipsum dolor sit amet consectetur. Tempor adipiscing vulputate id sed risus venenatis fusce pharetra faucibus. '},
-  ] 
+  const [state, setState] = useState([])
 
-  const states = () => {
-    if (window.innerWidth < 640) return items.slice(0,2)
-    if (window.innerWidth < 960) return items.slice(0,4)
-    if (window.innerWidth > 960) return items.slice(0,9)
+  useEffect(()=>{
+    getList()
+  }, [])
+
+  const getList = () => {
+    const db = getDatabase();
+    const starCountRef = ref(db, 'CV/mas/');
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val()
+      if (window.innerWidth < 640) {
+        setState(data.slice(0,4))
+        if (data.length <= 4) {
+          document.getElementById('hrBtn').style.display = "none"
+        }
+      }
+      if (window.innerWidth < 960) {
+        setState(data.slice(0,4))
+        if (data.length <= 4) {
+          document.getElementById('hrBtn').style.display = "none"
+        }
+      }
+      if (window.innerWidth > 960) {
+        setState(data.slice(0,9))
+        if (data.length <= 6) {
+          document.getElementById('hrBtn').style.display = "none"
+        }
+      }
+    });
   }
-  
-  const [state, setState] = useState(states())
 
 
   const openHr = () => {
-    setState(items)
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, 'CV/mas/')).then((snapshot) => {
+      setState(snapshot.val());
+    })
     document.getElementById('hrBtn').style.display = "none"
   }
 

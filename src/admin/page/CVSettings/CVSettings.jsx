@@ -4,8 +4,13 @@ import MoreInfo from "./page/MoreInfo/MoreInfo";
 import Contacts from "./page/Contacts/Contacts";
 import Skills from "./page/Skills/Skills";
 import Socials from "./page/Socials/Socials";
+import { setPage } from "../../../components/features/page";
+import { useDispatch } from "react-redux";
 
 function CVSettings() {
+
+  const dispach = useDispatch()
+
 
   const [content, setcontent] = useState(<MoreInfo/>)
 
@@ -13,6 +18,7 @@ function CVSettings() {
   const setSettings = (e) => {
     let list = document.getElementsByClassName('pageAdmin-nav-item')
     for (let index = 0; index < list.length; index++) list[index].classList.remove('pageAdmin-nav-item-active')
+    
 
     if (e.target.innerText === 'Main info') {
       setcontent(<MoreInfo/>)
@@ -34,9 +40,9 @@ function CVSettings() {
 
   return (
     <div className="CVSettings pageAdmin">
-      <div className="pageAdmin-title">Customers</div>
+      <div className="pageAdmin-title">CV</div>
       <div className="pageAdmin-content">
-        <ButtonBack/>
+        <ButtonBack onClick={() => dispach(setPage('CV'))}/>
         <div style={{marginTop:'48px'}} className="pageAdmin-nav">
           <div onClick={setSettings} className="pageAdmin-nav-item pageAdmin-nav-item-active">Main info</div>
           <div onClick={setSettings} className="pageAdmin-nav-item">Contacts</div>

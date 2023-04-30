@@ -1,22 +1,48 @@
 import TwoButton from "../../UI/buttons/twoButton/twoButton";
-import img from '../../../image/Vector (14).svg'
 import CostomersItem from "../../UI/customersItem/custormersIte,";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getDatabase, ref, onValue, get, child} from "firebase/database";
+
 
 function MainCostomers() {
 
-  let items = [img,img,img,img,img,img,img,img,img,img,img,img,img,img,img,img,img]
+  const [state, setState] = useState([])
 
-  const states = () => {
-    if (window.innerWidth < 640) return items.slice(0,6)
-    if (window.innerWidth < 960) return items.slice(0,9)
-    if (window.innerWidth > 960) return items.slice(0,15)
+  useEffect(()=>{
+    getList()
+  }, [])
+
+  const getList = () => {
+    const db = getDatabase();
+    const starCountRef = ref(db, 'Customers/mas/');
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val()
+      if (window.innerWidth < 640) {
+        setState(data.slice(0,6))
+        if (data.length <= 4) {
+          document.getElementById('costBtn').style.display = "none"
+        }
+      }
+      if (window.innerWidth < 960) {
+        setState(data.slice(0,9))
+        if (data.length <= 4) {
+          document.getElementById('costBtn').style.display = "none"
+        }
+      }
+      if (window.innerWidth > 960) {
+        setState(data.slice(0,15))
+        if (data.length <= 6) {
+          document.getElementById('costBtn').style.display = "none"
+        }
+      }
+    });
   }
 
-  const [state, setState] = useState(states())
-
   const openHr = () => {
-    setState(items)
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, 'Customers/mas/')).then((snapshot) => {
+      setState(snapshot.val());
+    })
     document.getElementById('costBtn').style.display = "none"
   }
 

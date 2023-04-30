@@ -1,6 +1,6 @@
-function ButtonSave({marginTop}) {
+function ButtonSave({marginTop, onClick}) {
   return (
-    <div style={{marginTop: marginTop}} className="pageAdmin-buttonSave">Save</div>
+    <div onClick={onClick} style={{marginTop: marginTop}} className="pageAdmin-buttonSave">Save</div>
   );
 }
 

@@ -132,6 +132,12 @@
   line-height: 32px;
   margin-bottom: 60px;
 }
+.pageAdmin-newbtn{
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  cursor: pointer;
+}
 .pageAdmin-listItems{
   width: 100%;
   overflow: auto;
@@ -278,4 +284,7 @@
 }
 .pageAdmin-btns{
   display: flex;
+}
+.LeftPanelAdmin-top-logo-img{
+  width: 90px;
 }
