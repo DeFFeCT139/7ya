@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import MainContact from "./mainContact/mainContact";
 import MainCostomers from "./mainCustomers/mainCostomers";
 import MainHR from "./mainHR/mainHR";
@@ -20,6 +21,7 @@ function Main() {
       <MainRedBtn/>
       <div className="main-bottom">
         <a href='https://pingwing.ru' className="footer-right-powered">Powered by pingwing.ru</a>
+        <Link to={'/7ya/admin'} className="footer-right-powered">Powered by pingwing.ru</Link>
       </div>
     </div>
   );
