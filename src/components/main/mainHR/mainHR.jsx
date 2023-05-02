@@ -58,7 +58,7 @@ function MainHR() {
           </div>
           <div className="main-hr-list">
             {state.map((item, index) => 
-              <HrItems key={index} text={item}/>
+              <HrItems key={index} index={index} text={item}/>
             )}
             <div className="main-hr-list-facke-item"></div>
           </div>

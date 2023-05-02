@@ -13,7 +13,7 @@ function Header() {
   useDynamicAdapt('max')
 
   useEffect(()=>{
-    scroll()
+    //scroll()
     animete()
   },[])
 

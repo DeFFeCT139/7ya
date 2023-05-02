@@ -2,6 +2,7 @@ import arrow from '../../../image/Arrow 1.svg'
 import img from '../../../image/image 6.svg'
 
 function PartnersItem({text}) {
+
   return (
     <div className="main">
       <div className="main-parners-list-item">

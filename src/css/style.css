@@ -283,7 +283,6 @@ body::-webkit-scrollbar-thumb {
 .main-parners-list-item{
   background-color: var(--bg1);
   width: 320px;
-  height: 344px;
   border-radius: 20px;
   padding: 21px 35px 21px 56px;
   margin-bottom: 55px;
@@ -294,6 +293,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
+  margin-top: 10px;
 }
 .main-parners-list-item-link-arrow{
   margin-left: 8px;
@@ -302,8 +302,9 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
+  word-break:break-all;
   color: #A6A6A6;
-  height: 80px;
+  max-height: 80px;
   overflow: hidden;
   margin-top: 12px;
 }
@@ -506,6 +507,9 @@ body::-webkit-scrollbar-thumb {
   line-height: 44px;
   opacity: 0.5;
 }
+.cards{
+  color: #FFFFFF;
+}
 
 
 /* Adaptation */
@@ -622,7 +626,6 @@ body::-webkit-scrollbar-thumb {
   }
   .main-parners-list-item{
     width: 272px;
-    height: 344px;
     padding: 21px 21px 21px 35px;
   }
   .main-parners-list-item-image{
@@ -759,6 +762,7 @@ body::-webkit-scrollbar-thumb {
     height: 100%;
   }
   .main-services-list-item-bottom{
+    white-space: pre-wrap;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
