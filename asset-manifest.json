@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/7ya/static/css/main.404c8d54.css",
+    "main.css": "/7ya/static/css/main.fcbbeafe.css",
     "main.js": "/7ya/static/js/main.56f1c87d.js",
     "static/js/787.f3bd7ddd.chunk.js": "/7ya/static/js/787.f3bd7ddd.chunk.js",
     "static/media/ezgif.com-video-to-gif.gif": "/7ya/static/media/ezgif.com-video-to-gif.f94e59e66bdda080c4b1.gif",
@@ -28,12 +28,12 @@
     "static/media/Group 63.svg": "/7ya/static/media/Group 63.36f016dd3427c32ffc8f766de0452d78.svg",
     "static/media/Vector (17).svg": "/7ya/static/media/Vector (17).d7a2c2f30bd363f519d5db190e60463f.svg",
     "static/media/Vector (18).svg": "/7ya/static/media/Vector (18).25662209f6aa9e19adab7cc22759706c.svg",
-    "main.404c8d54.css.map": "/7ya/static/css/main.404c8d54.css.map",
+    "main.fcbbeafe.css.map": "/7ya/static/css/main.fcbbeafe.css.map",
     "main.56f1c87d.js.map": "/7ya/static/js/main.56f1c87d.js.map",
     "787.f3bd7ddd.chunk.js.map": "/7ya/static/js/787.f3bd7ddd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.404c8d54.css",
+    "static/css/main.fcbbeafe.css",
     "static/js/main.56f1c87d.js"
   ]
 }
