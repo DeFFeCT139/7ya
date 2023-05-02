@@ -180,6 +180,7 @@ body::-webkit-scrollbar-thumb {
   line-height: 32px;
 }
 .main-services-list-item-bottom{
+  white-space: pre-wrap;
   padding: 0px 52px 32px 52px;
   font-weight: 400;
   font-size: 24px;
