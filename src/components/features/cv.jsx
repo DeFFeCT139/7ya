@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  contact: [],
+  contact: ['/','/','/','/'],
   desc: '',
   name: '',
   prof: '',
   title: '',
   link: '',
   edit: 'editCV',
-  soc: []
+  soc: ['/','/','/','/']
   
 }
 

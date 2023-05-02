@@ -55,16 +55,29 @@ function MoreInfo() {
       get(child(dbRef, `CV/mas/`)).then((snapshot) => {
         let data = snapshot.val()
         const db = getDatabase();
-        set(ref(db, `CV/mas/${data.length}`), {
-          contact: contact,
-          desc: desc,
-          name: name,
-          prof: prof,
-          title: title,
-          edit: edit,
-          link: link,
-          soc: soc
-        })
+        if (item.substr(0, 4) === 'edit') {
+          set(ref(db, `CV/mas/${item.substr(4, 10000)}`), {
+            contact: contact,
+            desc: desc,
+            name: name,
+            prof: prof,
+            title: title,
+            edit: edit,
+            link: link,
+            soc: soc
+          });
+        } else if (item === 'new'){
+          set(ref(db, `CV/mas/${data.length}`), {
+            contact: contact,
+            desc: desc,
+            name: name,
+            prof: prof,
+            title: title,
+            edit: edit,
+            link: link,
+            soc: soc
+          });
+        }
       })
       dispach(setPage('CV'))
   }
