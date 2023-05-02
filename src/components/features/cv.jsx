@@ -6,6 +6,7 @@ const initialState = {
   name: '',
   prof: '',
   title: '',
+  link: '',
   edit: 'editCV',
   soc: []
   
@@ -18,8 +19,11 @@ export const cvSlise = createSlice({
     setContact: (state, action) => {
       state.contact = action.payload
     },
-    setDesc: (state, action) => {
+    setDesc: (state, action) => { 
       state.desc = action.payload
+    },
+    setLink: (state, action) => {
+      state.link = action.payload
     },
     setName: (state, action) => {
       state.name = action.payload
@@ -40,4 +44,5 @@ export const {setName} = cvSlise.actions
 export const {setProf} = cvSlise.actions
 export const {setTitle} = cvSlise.actions
 export const {setSoc} = cvSlise.actions
+export const {setLink} = cvSlise.actions
 export default cvSlise.reducer

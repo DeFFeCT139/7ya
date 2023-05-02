@@ -4,6 +4,7 @@ import ButtonSave from "../../../../components/UI/buttonSave/buttonSave";
 import Textarea from "../../../../components/UI/textarea/textarea";
 import { child, get, getDatabase, ref, set } from "firebase/database";
 import { setPage } from "../../../../../components/features/page";
+import { useEffect, useState } from "react";
 
 
 function Skills() {
@@ -15,7 +16,38 @@ function Skills() {
   let prof = useSelector((state) => state.cv.prof)
   let title = useSelector((state) => state.cv.title)
   let edit = useSelector((state) => state.cv.edit)
+  let link = useSelector((state) => state.cv.link)
   let soc = useSelector((state) => state.cv.soc)
+
+  const [state, setState] = useState('')
+
+  let item = useSelector((state) => state.item.item)
+
+  useEffect(() => {
+    getValue(item)
+  },[])
+
+  const getValue = (item) => {
+    if (item.substr(0, 4) === 'edit') {
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `CV/mas/${item.substr(4, 10000)}`)).then((snapshot) => {
+        let data = snapshot.val()
+        setState(data)
+      }) 
+    } else {
+      setState({
+        contact: contact,
+        desc: desc,
+        name: name,
+        link: link,
+        prof: prof,
+        title: title,
+        edit: edit,
+        soc: soc
+      })
+    }
+  }
+  
 
   const save = () => {
       const dbRef = ref(getDatabase());
@@ -26,6 +58,7 @@ function Skills() {
           contact: contact,
           desc: desc,
           name: name,
+          link: link,
           prof: prof,
           title: title,
           edit: edit,
@@ -37,7 +70,7 @@ function Skills() {
 
   return (
     <div className="Skills">
-      <Textarea onChange={(e) => dispach(setDesc(e.target.value))} name={'Description'} marginTop={'34px'}/>
+      <Textarea defoluteValue={state.desc} onChange={(e) => dispach(setDesc(e.target.value))} name={'Description'} marginTop={'34px'}/>
       <ButtonSave onClick={save} marginTop={'88px'}/>
     </div>
   );

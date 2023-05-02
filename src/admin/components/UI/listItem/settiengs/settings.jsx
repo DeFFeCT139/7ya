@@ -1,4 +1,4 @@
-export const settings = (title, props) => {
+export const settings = (title, props, index) => {
   let settings = {}
   if (title === "Services") {
     settings = {
@@ -13,6 +13,7 @@ export const settings = (title, props) => {
       desc: props.desc,
       name: props.name,
       prof: props.name,
+      link: props.link + Math.floor(Math.random() * (1000 - 1) + 1),
       title: props.title,
       edit: props.edit,
       soc: props.soc

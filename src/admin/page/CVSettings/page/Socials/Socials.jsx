@@ -4,18 +4,39 @@ import Input from "../../../../components/UI/input/input";
 import { setSoc } from "../../../../../components/features/cv";
 import { setPage } from "../../../../../components/features/page";
 import { child, get, getDatabase, ref, set } from "firebase/database";
+import { useEffect, useState } from "react";
 
 function Socials() {
 
   let dispach = useDispatch()
+  const [state, setState] = useState('')
 
   let contact = useSelector((state) => state.cv.contact)
   let desc = useSelector((state) => state.cv.desc)
   let name = useSelector((state) => state.cv.name)
   let prof = useSelector((state) => state.cv.prof)
   let title = useSelector((state) => state.cv.title)
+  let link = useSelector((state) => state.cv.link)
   let edit = useSelector((state) => state.cv.edit)
   let soc = useSelector((state) => state.cv.soc)
+
+  let item = useSelector((state) => state.item.item)
+
+  useEffect(() => {
+    getValue(item)
+  },[])
+
+  const getValue = (item) => {
+    if (item.substr(0, 4) === 'edit') {
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `CV/mas/${item.substr(4, 10000)}`)).then((snapshot) => {
+        let data = snapshot.val()
+        setState(data.soc)
+      }) 
+    } else {
+      setState(soc)
+    }
+  }
 
   const save = () => {
       const dbRef = ref(getDatabase());
@@ -27,6 +48,7 @@ function Socials() {
           desc: desc,
           name: name,
           prof: prof,
+          link: link,
           title: title,
           edit: edit,
           soc: soc
@@ -40,26 +62,48 @@ function Socials() {
 
   const getMas = (index, text) => {
     if (index === 0){
-      mas[index] = text
-      dispach(setSoc(mas))
+      if (text !== '') {
+        if (mas[1] === '' || mas[1] === undefined || mas[1] === null) mas[1] = '/'
+        if (mas[2] === '' || mas[2] === undefined || mas[2] === null) mas[2] = '/'
+        if (mas[3] === '' || mas[3] === undefined || mas[3] === null) mas[3] = '/'
+        mas[index] = text
+        dispach(setSoc(mas))
+      }
     } else if (index === 1){
-      mas[index] = text
-      dispach(setSoc(mas))
+      if (text !== '') {
+        if (mas[0] === '' || mas[0] === undefined || mas[0] === null) mas[0] = '/'
+        if (mas[2] === '' || mas[2] === undefined || mas[2] === null) mas[2] = '/'
+        if (mas[3] === '' || mas[3] === undefined || mas[3] === null) mas[3] = '/'
+        mas[index] = text
+        dispach(setSoc(mas))
+      }
     } else if (index === 2){
-      mas[index] = text
-      dispach(setSoc(mas))
+      if (text !== '') {
+        if (mas[0] === '' || mas[0] === undefined || mas[0] === null) mas[0] = '/'
+        if (mas[1] === '' || mas[1] === undefined || mas[1] === null) mas[1] = '/'
+        if (mas[3] === '' || mas[3] === undefined || mas[3] === null) mas[3] = '/'
+        mas[index] = text
+        dispach(setSoc(mas))
+      }
     } else if (index === 3){
-      mas[index] = text
-      dispach(setSoc(mas))
+      if (text !== '') {
+        if (mas[0] === '' || mas[0] === undefined || mas[0] === null) mas[0] = '/'
+        if (mas[1] === '' || mas[1] === undefined || mas[1] === null) mas[1] = '/'
+        if (mas[2] === '' || mas[2] === undefined || mas[2] === null) mas[2] = '/'
+        mas[index] = text
+        dispach(setSoc(mas))
+      }
     }
   }
 
+
+
   return (
     <div className="Contacts">
-      <Input onChange={(e) => getMas(0, e.target.value)} marginTop={'34px'} name={'Telegram'}/>
-      <Input onChange={(e) => getMas(1, e.target.value)} marginTop={'24px'} name={'WhatsApp'}/>
-      <Input onChange={(e) => getMas(2, e.target.value)} marginTop={'24px'} name={'Instagram'}/>
-      <Input onChange={(e) => getMas(3, e.target.value)} marginTop={'24px'} name={'Linked In'}/>
+      <Input defoluteValue={state[0]} onChange={(e) => getMas(0, e.target.value)} marginTop={'34px'} name={'Telegram'}/>
+      <Input defoluteValue={state[1]} onChange={(e) => getMas(1, e.target.value)} marginTop={'24px'} name={'WhatsApp'}/>
+      <Input defoluteValue={state[2]} onChange={(e) => getMas(2, e.target.value)} marginTop={'24px'} name={'Instagram'}/>
+      <Input defoluteValue={state[3]} onChange={(e) => getMas(3, e.target.value)} marginTop={'24px'} name={'Linked In'}/>
       <ButtonSave onClick={save} marginTop={'48px'}/>
     </div>
   );

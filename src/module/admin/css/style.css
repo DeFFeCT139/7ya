@@ -1,0 +1,302 @@
+*{
+  box-sizing: border-box;
+}
+
+:root{
+  --bg1:#191919;
+  --bg2:#202020 ;
+}
+.Admin{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg1);
+}
+.LeftPanelAdmin{
+  width: 384px;
+  height: 100vh;
+  background-color: var(--bg2);
+  padding:32px;
+}
+.component-title {
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  top: 30px;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #888;
+  text-align: center;
+}
+
+/* The switch - the box around the slider */
+.container {
+  width: 51px;
+  height: 31px;
+  position: relative;
+}
+
+/* Hide default HTML checkbox */
+.checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.switch {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #e9e9eb;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+/* The slider */
+.slider {
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  left: calc(50% - 27px/2 - 10px);
+  top: calc(50% - 27px/2);
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.checkbox:checked + .switch {
+  background-color: #34C759;
+}
+
+.checkbox:checked + .switch .slider {
+  left: calc(50% - 27px/2 + 10px);
+  top: calc(50% - 27px/2);
+}
+.LeftPanelAdmin-top-checked-block{
+  display: flex;
+  align-items: center;
+}
+.LeftPanelAdmin-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.LeftPanelAdmin-top-checked-block-title{
+  margin-right: 15px;
+  font-weight: 400;
+  font-size: 10px;
+  color: #00FF0A;
+  line-height: 32px;
+}
+.LeftPanelAdmin-bottom-link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 34px;
+  background-color: var(--bg1);
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 40px;
+}
+.LeftPanelAdmin-bottom{
+  margin-top: 70px;
+}
+.LeftPanelAdmin-bottom-btn{
+  padding: 16px 0px;
+  text-align: center;
+  width: 100%;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  display: block;
+}
+.pageAdmin{
+  overflow: auto;
+  width: calc(100% - 400px);
+  height: 100vh;
+  padding: 35px 100px 35px 100px;
+}
+.pageAdmin-title{
+  font-weight: 400;
+  font-size: 58px;
+  line-height: 32px;
+  margin-bottom: 60px;
+}
+.pageAdmin-newbtn{
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  cursor: pointer;
+}
+.pageAdmin-listItems{
+  width: 100%;
+  overflow: auto;
+  height: 75vh;
+}
+.pageAdmin-listItems::-webkit-scrollbar {
+  width: 12px;               /* ширина scrollbar */
+}
+.pageAdmin-listItems::-webkit-scrollbar-track {
+  background: var(--bg1);        /* цвет дорожки */
+}
+.pageAdmin-listItems::-webkit-scrollbar-thumb {
+  background-color: var(--bg2);    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+  border: 3px solid var(--bg1);  /* padding вокруг плашки */
+}
+.pageAdmin::-webkit-scrollbar {
+  width: 12px;               /* ширина scrollbar */
+}
+.pageAdmin::-webkit-scrollbar-track {
+  background: var(--bg1);        /* цвет дорожки */
+}
+.pageAdmin::-webkit-scrollbar-thumb {
+  background-color: var(--bg2);    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+  border: 3px solid var(--bg1);  /* padding вокруг плашки */
+}
+.pageAdmin-listItem{
+  padding: 32px 32px 32px 54px;
+  display: flex;
+  background-color: var(--bg2);
+  border-radius: 10px;
+  margin-bottom: 40px;
+  margin-right: 10px;
+}
+.pageAdmin-listItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pageAdmin-listItem-btns{
+  display: flex;
+}
+.pageAdmin-listItem-btn{
+  cursor: pointer;
+  margin-left: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+}
+.pageAdmin-listItem-title{
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+.pageAdmin-back-btn{
+  display: flex;
+  cursor: pointer;
+}
+.pageAdmin-back-btn-title{
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  margin-left: 15px;
+}
+.pageAdmin-input-input{
+  width: 70%;
+  padding: 10px 24px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  background-color: var(--bg1);
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  outline: none;
+}
+.pageAdmin-input-title{
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  margin-left: 20px;
+}
+.pageAdmin-input-textarea{
+  width: 70%;
+  padding: 10px 24px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  background-color: var(--bg1);
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  outline: none;
+  resize: none;
+  height: 152px;
+}
+.pageAdmin-buttonSave{
+  width: 320px;
+  background: #D9D9D9;
+  border-radius: 10px;
+  padding: 16px 0px;
+  text-align: center;
+  color: #000;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+.pageAdmin-addPhoto-block-img{
+  width: 100%;
+}
+.pageAdmin-addPhoto-block{
+  width: 121px;
+  border-radius: 20px;
+}
+.pageAdmin-addPhoto{
+  display: flex;
+  align-items: center;
+}
+.pageAdmin-addPhoto-btn{
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+.pageAdmin-nav{
+  display: flex;
+}
+.pageAdmin-nav-item{
+  padding: 8px 22px;
+  border: 1px solid var(--bg2);
+  background-color: var(--bg2);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  cursor: pointer;
+}
+.pageAdmin-nav-item-active{
+  border: 1px solid #fff;
+}
+.pageAdmin-addFile{
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  width: unset;
+  background-color: var(--bg1);
+  cursor: pointer;
+}
+.pageAdmin-addFile-img{
+  margin-left: 17px;
+}
+.pageAdmin-btns{
+  display: flex;
+}
+.LeftPanelAdmin-top-logo-img{
+  width: 90px;
+}

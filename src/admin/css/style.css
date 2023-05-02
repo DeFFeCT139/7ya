@@ -122,6 +122,7 @@
   display: block;
 }
 .pageAdmin{
+  overflow: auto;
   width: calc(100% - 400px);
   height: 100vh;
   padding: 35px 100px 35px 100px;
@@ -150,6 +151,17 @@
   background: var(--bg1);        /* цвет дорожки */
 }
 .pageAdmin-listItems::-webkit-scrollbar-thumb {
+  background-color: var(--bg2);    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+  border: 3px solid var(--bg1);  /* padding вокруг плашки */
+}
+.pageAdmin::-webkit-scrollbar {
+  width: 12px;               /* ширина scrollbar */
+}
+.pageAdmin::-webkit-scrollbar-track {
+  background: var(--bg1);        /* цвет дорожки */
+}
+.pageAdmin::-webkit-scrollbar-thumb {
   background-color: var(--bg2);    /* цвет плашки */
   border-radius: 20px;       /* закругления плашки */
   border: 3px solid var(--bg1);  /* padding вокруг плашки */

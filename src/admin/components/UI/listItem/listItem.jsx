@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { setPage } from "../../../../components/features/page";
 import { child, get, getDatabase, ref, set } from "firebase/database";
 import { settings } from "./settiengs/settings";
+import { setItem } from "../../../../components/features/item";
 
 function ListItemAdmin({props, title, index}) {
   const dispach = useDispatch()
@@ -11,7 +12,7 @@ function ListItemAdmin({props, title, index}) {
     get(child(dbRef, `${title}/mas/`)).then((snapshot) => {
       let data = snapshot.val()
       const db = getDatabase();
-      set(ref(db, `${title}/mas/${data.length}`), settings(title, props));
+      set(ref(db, `${title}/mas/${data.length}`), settings(title, props,index));
     })
   }
 
@@ -19,9 +20,9 @@ function ListItemAdmin({props, title, index}) {
     const dbRef = ref(getDatabase());
     get(child(dbRef, `${title}/mas/`)).then((snapshot) => {
       let data = snapshot.val()
-      data.splice(index,index === 0? 1 : index)
+      let mas = data.filter((item, index2) => index2 !== index)
       const db = getDatabase();
-      set(ref(db, `${title}/mas/`), data);
+      set(ref(db, `${title}/mas/`), mas);
     })
   }
 
@@ -30,7 +31,10 @@ function ListItemAdmin({props, title, index}) {
       <div className="pageAdmin-listItem-title">{props.title}</div>
       <div className="pageAdmin-listItem-btns">
         <div onClick={dublicate} className="pageAdmin-listItem-btn">Dublicate</div>
-        <div onClick={() => dispach(setPage(props.edit))} className="pageAdmin-listItem-btn">Edit</div>
+        <div onClick={() => {
+          dispach(setPage(props.edit))
+          dispach(setItem(`edit${index}`))  
+        }} className="pageAdmin-listItem-btn">Edit</div>
         <div onClick={delite} className="pageAdmin-listItem-btn">Delete</div>
       </div>
     </div>
