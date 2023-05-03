@@ -8,8 +8,8 @@ const initialState = {
   title: '',
   link: '',
   edit: 'editCV',
-  soc: ['/','/','/','/']
-  
+  soc: ['/','/','/','/'],
+  img: null
 }
 
 export const cvSlise = createSlice({
@@ -18,6 +18,9 @@ export const cvSlise = createSlice({
   reducers: {
     setContact: (state, action) => {
       state.contact = action.payload
+    },
+    setImg: (state, action) => {
+      state.img = action.payload
     },
     setDesc: (state, action) => { 
       state.desc = action.payload
@@ -45,4 +48,5 @@ export const {setProf} = cvSlise.actions
 export const {setTitle} = cvSlise.actions
 export const {setSoc} = cvSlise.actions
 export const {setLink} = cvSlise.actions
+export const {setImg} = cvSlise.actions
 export default cvSlise.reducer

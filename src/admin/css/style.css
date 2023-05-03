@@ -248,9 +248,17 @@
 .pageAdmin-addPhoto-block-img{
   width: 100%;
 }
+.pageAdmin-addPhoto-btn-inpet{
+  opacity: 0;
+}
 .pageAdmin-addPhoto-block{
   width: 121px;
+  height: 121px;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../image/Group\ 69.png');
   border-radius: 20px;
+  overflow: hidden;
 }
 .pageAdmin-addPhoto{
   display: flex;

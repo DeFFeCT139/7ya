@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import ButtonSave from "../../../../components/UI/buttonSave/buttonSave";
 import Input from "../../../../components/UI/input/input";
-import { setContact } from "../../../../../components/features/cv";
+import { setContact, setDesc, setImg, setLink, setName, setProf, setSoc } from "../../../../../components/features/cv";
 import { setPage } from "../../../../../components/features/page";
 import { child, get, getDatabase, ref, set } from "firebase/database";
 import { useEffect, useState } from "react";
@@ -19,6 +19,8 @@ function Contacts() {
   let edit = useSelector((state) => state.cv.edit)
   let link = useSelector((state) => state.cv.link)
   let soc = useSelector((state) => state.cv.soc)
+  let img = useSelector((state) => state.cv.img)
+
 
   const [state, setState] = useState('')
 
@@ -26,7 +28,7 @@ function Contacts() {
 
   useEffect(() => {
     getValue(item)
-  },[])
+  },[item])
 
   const getValue = (item) => {
     if (item.substr(0, 4) === 'edit') {
@@ -34,7 +36,12 @@ function Contacts() {
       get(child(dbRef, `CV/mas/${item.substr(4, 10000)}`)).then((snapshot) => {
         let data = snapshot.val()
         setState(data.contact)
-      }) 
+        if (img === null || img === data.img) {
+          setState(contact)
+        } else {
+          setState(contact)
+        }
+      })
     } else {
       setState(contact)
     }
@@ -55,7 +62,8 @@ function Contacts() {
             title: title,
             edit: edit,
             link: link,
-            soc: soc
+            soc: soc,
+            img: img
           });
         } else if (item === 'new'){
           set(ref(db, `CV/mas/${data.length}`), {
@@ -66,10 +74,18 @@ function Contacts() {
             title: title,
             edit: edit,
             link: link,
-            soc: soc
+            soc: soc,
+            img: img
           });
         }
       })
+      dispach(setContact(['/','/','/','/']))
+      dispach(setName(''))
+      dispach(setProf(''))
+      dispach(setImg(null))
+      dispach(setLink(''))
+      dispach(setSoc(['/','/','/','/']))
+      dispach(setDesc(''))
       dispach(setPage('CV'))
   }
 

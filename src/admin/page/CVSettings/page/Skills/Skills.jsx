@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setDesc } from "../../../../../components/features/cv";
+import { setContact, setDesc, setImg, setLink, setName, setProf, setSoc } from "../../../../../components/features/cv";
 import ButtonSave from "../../../../components/UI/buttonSave/buttonSave";
 import Textarea from "../../../../components/UI/textarea/textarea";
 import { child, get, getDatabase, ref, set } from "firebase/database";
@@ -18,10 +18,13 @@ function Skills() {
   let edit = useSelector((state) => state.cv.edit)
   let link = useSelector((state) => state.cv.link)
   let soc = useSelector((state) => state.cv.soc)
+  let img = useSelector((state) => state.cv.img)
+
 
   const [state, setState] = useState('')
 
   let item = useSelector((state) => state.item.item)
+  
 
   useEffect(() => {
     getValue(item)
@@ -32,7 +35,31 @@ function Skills() {
       const dbRef = ref(getDatabase());
       get(child(dbRef, `CV/mas/${item.substr(4, 10000)}`)).then((snapshot) => {
         let data = snapshot.val()
-        setState(data)
+        if (img === null || img === data.img) {
+          setState({
+            contact: contact,
+            desc: desc,
+            name: name,
+            prof: prof,
+            title: title,
+            edit: edit,
+            link: link,
+            soc: soc,
+            img:img
+          })
+        } else {
+          setState({
+            contact: contact,
+            desc: desc,
+            name: name,
+            prof: prof,
+            title: title,
+            edit: edit,
+            link: link,
+            soc: soc,
+            img:img
+          })
+        }
       }) 
     } else {
       setState({
@@ -43,7 +70,8 @@ function Skills() {
         prof: prof,
         title: title,
         edit: edit,
-        soc: soc
+        soc: soc,
+        img: img
       })
     }
   }
@@ -63,7 +91,8 @@ function Skills() {
             title: title,
             edit: edit,
             link: link,
-            soc: soc
+            soc: soc,
+            img: img
           });
         } else if (item === 'new'){
           set(ref(db, `CV/mas/${data.length}`), {
@@ -74,10 +103,18 @@ function Skills() {
             title: title,
             edit: edit,
             link: link,
-            soc: soc
+            soc: soc,
+            img: img
           });
         }
       })
+      dispach(setContact(['/','/','/','/']))
+      dispach(setName(''))
+      dispach(setProf(''))
+      dispach(setImg(null))
+      dispach(setLink(''))
+      dispach(setSoc(['/','/','/','/']))
+      dispach(setDesc(''))
       dispach(setPage('CV'))
   }
 

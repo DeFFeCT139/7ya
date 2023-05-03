@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import ButtonSave from "../../../../components/UI/buttonSave/buttonSave";
 import Input from "../../../../components/UI/input/input";
-import { setSoc } from "../../../../../components/features/cv";
+import { setContact, setDesc, setImg, setLink, setName, setProf, setSoc } from "../../../../../components/features/cv";
 import { setPage } from "../../../../../components/features/page";
 import { child, get, getDatabase, ref, set } from "firebase/database";
 import { useEffect, useState } from "react";
@@ -19,6 +19,8 @@ function Socials() {
   let link = useSelector((state) => state.cv.link)
   let edit = useSelector((state) => state.cv.edit)
   let soc = useSelector((state) => state.cv.soc)
+  let img = useSelector((state) => state.cv.img)
+
 
   let item = useSelector((state) => state.item.item)
 
@@ -31,7 +33,11 @@ function Socials() {
       const dbRef = ref(getDatabase());
       get(child(dbRef, `CV/mas/${item.substr(4, 10000)}`)).then((snapshot) => {
         let data = snapshot.val()
-        setState(data.soc)
+        if (img === null || img === data.img) {
+          setState(soc)
+        } else {
+          setState(soc)
+        }
       }) 
     } else {
       setState(soc)
@@ -52,7 +58,8 @@ function Socials() {
             title: title,
             edit: edit,
             link: link,
-            soc: soc
+            soc: soc,
+            img: img
           });
         } else if (item === 'new'){
           set(ref(db, `CV/mas/${data.length}`), {
@@ -63,10 +70,18 @@ function Socials() {
             title: title,
             edit: edit,
             link: link,
-            soc: soc
+            soc: soc,
+            img: img
           });
         }
       })
+      dispach(setContact(['/','/','/','/']))
+      dispach(setName(''))
+      dispach(setProf(''))
+      dispach(setImg(null))
+      dispach(setLink(''))
+      dispach(setSoc(['/','/','/','/']))
+      dispach(setDesc(''))
       dispach(setPage('CV'))
   }
 

@@ -7,11 +7,14 @@ import Textarea from "../../components/UI/textarea/textarea";
 import { setPage } from "../../../components/features/page";
 import { child, get, getDatabase, ref, set } from "firebase/database";
 import { useEffect, useState } from "react";
+import { uploadFile } from "../../components/UI/addPhoto/upload";
+import { doonloadUrl } from "./doonloadImg";
 
 function PartnersSettings() {
   const dispach = useDispatch()
 
   const [state, setState] = useState('')
+  const [stateIMg, setStateIMg] = useState(null)
 
   let item = useSelector((state) => state.item.item)
 
@@ -24,6 +27,7 @@ function PartnersSettings() {
       const dbRef = ref(getDatabase());
       get(child(dbRef, `Partners/mas/${item.substr(4, 10000)}`)).then((snapshot) => {
         let data = snapshot.val()
+        doonloadUrl(data)
         setState(data)
       })
     }
@@ -43,19 +47,29 @@ function PartnersSettings() {
             desc: desc,
             title: title,
             edit: 'editP',
-            link: link
+            link: link,
+            img: stateIMg.name === null? state.img : stateIMg.name
           });
         } else if (item === 'new'){
           set(ref(db, `Partners/mas/${data.length}`), {
             desc: desc,
             title: title,
             edit: 'editP',
-            link: link
+            link: link,
+            img: stateIMg.name
           });
         }
       })
       dispach(setPage('Partners'))
+      uploadFile(stateIMg)
     }
+  }
+
+
+  const setPhoto = (e) => {
+      var src = URL.createObjectURL(e.target.files[0])
+      document.getElementById('img12').style.backgroundImage = `url(${src})`
+      setStateIMg(e.target.files[0])
   }
 
   return (
@@ -63,7 +77,7 @@ function PartnersSettings() {
       <div className="pageAdmin-title">Partners</div>
       <div className="pageAdmin-content">
         <ButtonBack onClick={() => dispach(setPage('Partners'))}/>
-        <AddPhoto marginTop={'32px'}/>
+        <AddPhoto onChenge={(e) => setPhoto(e)} marginTop={'32px'}/>
         <Input defoluteValue={state.title} id={'inputp'} marginTop={"32px"} name={'Company name'}/>
         <Textarea defoluteValue={state.desc} id={'textp'} marginTop={"24px"} name={'Description'}/>
         <Input defoluteValue={state.link} id={'inputp2'} marginTop={"24px"} name={'Company website'}/>

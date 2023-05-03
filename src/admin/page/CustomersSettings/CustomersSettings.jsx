@@ -6,10 +6,13 @@ import ButtonSave from "../../components/UI/buttonSave/buttonSave";
 import Input from "../../components/UI/input/input";
 import { child, get, getDatabase, ref, set } from "firebase/database";
 import { useEffect, useState } from "react";
+import { uploadFile } from "../../components/UI/addPhoto/upload";
+import { doonloadUrl } from "../PartnersSettings/doonloadImg";
 
 function CustomersSettings() {
   const dispach = useDispatch()
 
+  const [stateIMg, setStateIMg] = useState(null)
   const [state, setState] = useState('')
 
   let item = useSelector((state) => state.item.item)
@@ -23,6 +26,7 @@ function CustomersSettings() {
       const dbRef = ref(getDatabase());
       get(child(dbRef, `Customers/mas/${item.substr(4, 10000)}`)).then((snapshot) => {
         let data = snapshot.val()
+        doonloadUrl(data)
         setState(data)
       })
     }
@@ -39,18 +43,27 @@ function CustomersSettings() {
           set(ref(db, `Customers/mas/${item.substr(4, 10000)}`), {
             title: 'cascasc',
             edit: 'editC',
-            link: link
+            link: link,
+            img: stateIMg.name === null? state.img : stateIMg.name
           });
         } else if (item === 'new'){
           set(ref(db, `Customers/mas/${data.length}`), {
             title: 'cascasc',
             edit: 'editC',
-            link: link
+            link: link,
+            img: stateIMg.name 
           });
         }
       })
       dispach(setPage('Customers'))
+      uploadFile(stateIMg)
     }
+  }
+
+  const setPhoto = (e) => {
+    var src = URL.createObjectURL(e.target.files[0])
+    document.getElementById('img12').style.backgroundImage = `url(${src})`
+    setStateIMg(e.target.files[0])
   }
 
   return (
@@ -58,7 +71,7 @@ function CustomersSettings() {
       <div className="pageAdmin-title">Customers</div>
       <div className="pageAdmin-content">
         <ButtonBack onClick={() => dispach(setPage('Customers'))}/>
-        <AddPhoto marginTop={'72px'}/>
+        <AddPhoto onChenge={(e) => setPhoto(e)} marginTop={'72px'}/>
         <Input defoluteValue={state.link} id={'inputc'} marginTop={"46px"} name={'Company website'}/>
         <ButtonSave onClick={save} marginTop={"56px"}/>
       </div>

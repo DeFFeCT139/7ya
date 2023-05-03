@@ -16,7 +16,8 @@ export const settings = (title, props, index) => {
       link: props.link + Math.floor(Math.random() * (1000 - 1) + 1),
       title: props.title,
       edit: props.edit,
-      soc: props.soc
+      soc: props.soc,
+      img: props.img
     }
     return settings
   } else if (title === "Partners") {
@@ -24,14 +25,16 @@ export const settings = (title, props, index) => {
       desc: props.desc,
       title: props.title,
       edit: props.edit,
-      link: props.link
+      link: props.link,
+      img: props.img
     }
     return settings
   } else if (title === "Customers") {
     settings = {
       link: props.link,
       title: props.title,
-      edit: props.edit
+      edit: props.edit,
+      img: props.img
     }
     return settings
   }
