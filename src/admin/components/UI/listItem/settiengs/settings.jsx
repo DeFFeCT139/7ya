@@ -17,7 +17,10 @@ export const settings = (title, props, index) => {
       title: props.title,
       edit: props.edit,
       soc: props.soc,
-      img: props.img
+      img: props.img,
+      CV: props.CV,
+      VSF: props.VSF,
+      Ref: props.Ref 
     }
     return settings
   } else if (title === "Partners") {

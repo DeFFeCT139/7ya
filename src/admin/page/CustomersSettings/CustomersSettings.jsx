@@ -44,7 +44,7 @@ function CustomersSettings() {
             title: 'cascasc',
             edit: 'editC',
             link: link,
-            img: stateIMg.name === null? state.img : stateIMg.name
+            img: stateIMg === null? state.img : stateIMg.name
           });
         } else if (item === 'new'){
           set(ref(db, `Customers/mas/${data.length}`), {

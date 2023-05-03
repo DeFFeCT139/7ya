@@ -8,13 +8,14 @@ import ServicesSettings from "./page/ServicesSettings/ServicesSettings";
 import Services from "./page/services/services";
 import { useEffect, useState } from "react";
 
-function Admin() {
+function Admin({title}) {
 
   let her = useSelector((state) => state.page.page)
 
   const [state, setState] = useState()
 
   useEffect(()=>{
+    document.title = title
     getContent()
   },[her])
 

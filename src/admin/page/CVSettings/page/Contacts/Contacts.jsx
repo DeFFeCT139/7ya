@@ -20,6 +20,9 @@ function Contacts() {
   let link = useSelector((state) => state.cv.link)
   let soc = useSelector((state) => state.cv.soc)
   let img = useSelector((state) => state.cv.img)
+  let VSF = useSelector((state) => state.cv.VSF)
+  let Ref = useSelector((state) => state.cv.Ref)
+  let CV = useSelector((state) => state.cv.CV)
 
 
   const [state, setState] = useState('')
@@ -63,7 +66,10 @@ function Contacts() {
             edit: edit,
             link: link,
             soc: soc,
-            img: img
+            img: img,
+            CV: CV,
+            VSF: VSF,
+            Ref: Ref 
           });
         } else if (item === 'new'){
           set(ref(db, `CV/mas/${data.length}`), {
@@ -75,7 +81,10 @@ function Contacts() {
             edit: edit,
             link: link,
             soc: soc,
-            img: img
+            img: img,
+            CV: CV,
+            VSF: VSF,
+            Ref: Ref 
           });
         }
       })
@@ -84,7 +93,7 @@ function Contacts() {
       dispach(setProf(''))
       dispach(setImg(null))
       dispach(setLink(''))
-      dispach(setSoc(['/','/','/','/']))
+      dispach(setSoc(['/','/','/','/', '/']))
       dispach(setDesc(''))
       dispach(setPage('CV'))
   }

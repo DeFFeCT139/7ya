@@ -1,6 +1,5 @@
 import { getDownloadURL, ref } from 'firebase/storage';
 import arrow from '../../../image/Arrow 1.svg'
-import img from '../../../image/image 6.svg'
 import { storage } from '../../../index';
 import { useEffect, useState } from 'react';
 

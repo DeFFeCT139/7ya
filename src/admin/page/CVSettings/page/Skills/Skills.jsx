@@ -19,6 +19,9 @@ function Skills() {
   let link = useSelector((state) => state.cv.link)
   let soc = useSelector((state) => state.cv.soc)
   let img = useSelector((state) => state.cv.img)
+  let VSF = useSelector((state) => state.cv.VSF)
+  let Ref = useSelector((state) => state.cv.Ref)
+  let CV = useSelector((state) => state.cv.CV)
 
 
   const [state, setState] = useState('')
@@ -48,31 +51,11 @@ function Skills() {
             img:img
           })
         } else {
-          setState({
-            contact: contact,
-            desc: desc,
-            name: name,
-            prof: prof,
-            title: title,
-            edit: edit,
-            link: link,
-            soc: soc,
-            img:img
-          })
+          setState({desc: desc,})
         }
       }) 
     } else {
-      setState({
-        contact: contact,
-        desc: desc,
-        name: name,
-        link: link,
-        prof: prof,
-        title: title,
-        edit: edit,
-        soc: soc,
-        img: img
-      })
+      setState({desc: desc})
     }
   }
   
@@ -92,7 +75,10 @@ function Skills() {
             edit: edit,
             link: link,
             soc: soc,
-            img: img
+            img: img,
+            CV: CV,
+            VSF: VSF,
+            Ref: Ref 
           });
         } else if (item === 'new'){
           set(ref(db, `CV/mas/${data.length}`), {
@@ -104,7 +90,10 @@ function Skills() {
             edit: edit,
             link: link,
             soc: soc,
-            img: img
+            img: img,
+            CV: CV,
+            VSF: VSF,
+            Ref: Ref 
           });
         }
       })
@@ -113,7 +102,7 @@ function Skills() {
       dispach(setProf(''))
       dispach(setImg(null))
       dispach(setLink(''))
-      dispach(setSoc(['/','/','/','/']))
+      dispach(setSoc(['/','/','/','/', '/']))
       dispach(setDesc(''))
       dispach(setPage('CV'))
   }

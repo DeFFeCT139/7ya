@@ -6,7 +6,7 @@ import Skills from "./page/Skills/Skills";
 import Socials from "./page/Socials/Socials";
 import { setPage } from "../../../components/features/page";
 import { useDispatch, useSelector } from "react-redux";
-import { setContact, setDesc, setImg, setLink, setName, setProf, setSoc } from "../../../components/features/cv";
+import { setCV, setContact, setDesc, setImg, setLink, setName, setProf, setRef, setSoc, setVSF } from "../../../components/features/cv";
 import { child, get, ref, getDatabase } from "firebase/database";
 
 function CVSettings() {
@@ -32,6 +32,9 @@ function CVSettings() {
           dispach(setLink(data.link))
           dispach(setSoc(data.soc))
           dispach(setDesc(data.desc)) 
+          dispach(setCV(data.CV)) 
+          dispach(setRef(data.Ref)) 
+          dispach(setVSF(data.VSF)) 
         }
       })
     }
@@ -65,7 +68,19 @@ function CVSettings() {
     <div className="CVSettings pageAdmin">
       <div className="pageAdmin-title">CV</div>
       <div className="pageAdmin-content">
-        <ButtonBack onClick={() => dispach(setPage('CV'))}/>
+        <ButtonBack onClick={() => {
+          dispach(setPage('CV'))
+          dispach(setContact(['/','/','/','/']))
+          dispach(setName(''))
+          dispach(setProf(''))
+          dispach(setImg(null))
+          dispach(setLink(''))
+          dispach(setSoc(['/','/','/','/']))
+          dispach(setDesc(''))
+          dispach(setCV(null)) 
+          dispach(setRef(null)) 
+          dispach(setVSF(null)) 
+        }}/>
         <div style={{marginTop:'48px'}} className="pageAdmin-nav">
           <div onClick={setSettings} className="pageAdmin-nav-item pageAdmin-nav-item-active">Main info</div>
           <div onClick={setSettings} className="pageAdmin-nav-item">Contacts</div>

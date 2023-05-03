@@ -48,7 +48,7 @@ function PartnersSettings() {
             title: title,
             edit: 'editP',
             link: link,
-            img: stateIMg.name === null? state.img : stateIMg.name
+            img: stateIMg === null? state.img : stateIMg.name
           });
         } else if (item === 'new'){
           set(ref(db, `Partners/mas/${data.length}`), {

@@ -1,5 +1,5 @@
 import TwoButton from "../../UI/buttons/twoButton/twoButton";
-import img from '../../../image/Vector (23).svg'
+import img from '../../../image/Vector.png'
 
 
 function MainPricing() {

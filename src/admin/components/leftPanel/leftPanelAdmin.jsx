@@ -32,6 +32,17 @@ function LeftPanelAdmin() {
     set(ref(db, 'site/'), state);
   }
 
+  const active = (index1) => {
+    let name = document.getElementsByClassName('LeftPanelAdmin-bottom-link')
+    for (let index = 0; index < name.length; index++) {
+      if (index1 === index) {
+        name[index].classList.add('LeftPanelAdmin-bottom-link-active')
+      } else {
+        name[index].classList.remove('LeftPanelAdmin-bottom-link-active')
+      }
+    }
+  }
+
   return (
     <div className="LeftPanelAdmin">
       <div className="LeftPanelAdmin-top">
@@ -51,22 +62,42 @@ function LeftPanelAdmin() {
         </div>
       </div>
       <div className="LeftPanelAdmin-bottom">
-        <div onClick={(e) => dispach(setPage(e.target.innerText))} className="LeftPanelAdmin-bottom-links">
-          <div className='LeftPanelAdmin-bottom-link'>
-            <div className="LeftPanelAdmin-bottom-link-title">Services</div>
-            <img src={arrow} alt="" className="LeftPanelAdmin-bottom-link-arrow" />
+        <div className="LeftPanelAdmin-bottom-links">
+          <div className="lp-bottom">
+            <div onClick={() => {
+              dispach(setPage('Services'))
+              active(0)
+              }}  className='LeftPanelAdmin-bottom-link LeftPanelAdmin-bottom-link-active'>
+              <div className="LeftPanelAdmin-bottom-link-title">Services</div>
+              <img src={arrow} alt="" className="LeftPanelAdmin-bottom-link-arrow" />
+            </div>
           </div>
-          <div onClick={(e) => dispach(setPage(e.target.innerText))} className='LeftPanelAdmin-bottom-link'>
-            <div className="LeftPanelAdmin-bottom-link-title">CV</div>
-            <img src={arrow} alt="" className="LeftPanelAdmin-bottom-link-arrow" />
+          <div className="lp-bottom">
+            <div onClick={() => {
+              dispach(setPage('CV'))
+              active(1)
+            }} className='LeftPanelAdmin-bottom-link'>
+              <div className="LeftPanelAdmin-bottom-link-title">CV</div>
+              <img src={arrow} alt="" className="LeftPanelAdmin-bottom-link-arrow" />
+            </div>
           </div>
-          <div onClick={(e) => dispach(setPage(e.target.innerText))} className='LeftPanelAdmin-bottom-link'>
-            <div className="LeftPanelAdmin-bottom-link-title">Partners</div>
-            <img src={arrow} alt="" className="LeftPanelAdmin-bottom-link-arrow" />
+          <div className="lp-bottom">
+            <div onClick={() => {
+              dispach(setPage('Partners')) 
+              active(2)
+            }} className='LeftPanelAdmin-bottom-link'>
+              <div className="LeftPanelAdmin-bottom-link-title">Partners</div>
+              <img src={arrow} alt="" className="LeftPanelAdmin-bottom-link-arrow" />
+            </div>
           </div>
-          <div onClick={(e) => dispach(setPage(e.target.innerText))} className='LeftPanelAdmin-bottom-link'>
-            <div className="LeftPanelAdmin-bottom-link-title">Customers</div>
-            <img src={arrow} alt="" className="LeftPanelAdmin-bottom-link-arrow" />
+          <div className="lp-bottom">
+            <div onClick={() => {
+              dispach(setPage('Customers'))
+              active(3)
+              }} className='LeftPanelAdmin-bottom-link'>
+              <div className="LeftPanelAdmin-bottom-link-title">Customers</div>
+              <img src={arrow} alt="" className="LeftPanelAdmin-bottom-link-arrow" />
+            </div>
           </div>
         </div>
         <Link to={'/7ya/admin/preview'} className="LeftPanelAdmin-bottom-btn">Open preview page</Link>
