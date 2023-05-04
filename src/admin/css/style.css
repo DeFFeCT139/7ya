@@ -6,11 +6,29 @@
   --bg1:#191919;
   --bg2:#202020 ;
 }
-.Admin{
+.admin-login{
   display: flex;
   width: 100%;
   height: 100vh;
   background-color: var(--bg1);
+}
+.Admin-login-block{
+  width: 500px;
+  height: 600px;
+  background-color: var(--bg2);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0px 10px 0px;
+}
+.Admin-login{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .LeftPanelAdmin{
   width: 384px;
@@ -322,4 +340,41 @@
 }
 .fileActive > .pageAdmin-addFile-title{
   color: #00FF0A;
+}
+.Admin-login-block-input > .pageAdmin-input-input{
+  width: 100%;
+}
+.Admin-login-block-input{
+  width: 437px;
+}
+.Admin-login-block-logo{
+  display: flex;
+  align-items: center;
+}
+.Admin-login-block-logo-title{
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  margin-left: 20px;
+}
+.Admin-login-block-link{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 32px;
+  color: #A6A6A6;
+}
+.Admin-login-block-btn{
+  padding: 16px;
+  width: 320px;
+  background-color: #D9D9D9;
+  color: #000;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+textarea{
+  outline: none;
 }

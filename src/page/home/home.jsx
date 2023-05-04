@@ -7,7 +7,7 @@ import { getDatabase, ref, onValue, set,} from "firebase/database";
 
 function Home() {
 
-  const [state, setState] = useState(false)
+  const [state, setState] = useState(true)
 
   useEffect(()=>{
     getState()

@@ -15,7 +15,7 @@ function CostomersItem({img}) {
   }, [])
 
   return (
-    <a href={img.link} className="main-costomers-list-item">
+    <a target="_blank" href={img.link} className="main-costomers-list-item">
       <img className="main-costomers-list-item-img" src={state} alt="" />
     </a>
   );

@@ -22,7 +22,7 @@ function PartnersItem({text}) {
         </div>
         <div className="main-parners-list-item-title">{text.title}</div>
         <div className="main-parners-list-item-desc">{text.desc}</div>
-        <a href={text.link} className="main-parners-list-item-link">
+        <a target="_blank" href={text.link} className="main-parners-list-item-link">
           <div className="main-parners-list-item-link-title">Website</div>
           <img src={arrow} alt="" className="main-parners-list-item-link-arrow"/>
         </a>

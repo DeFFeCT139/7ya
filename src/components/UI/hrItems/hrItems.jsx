@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import img from '../../../image/Rectangle 4.png'
 import { useEffect, useState } from 'react';
 import { getDownloadURL, ref } from 'firebase/storage';
@@ -29,7 +29,7 @@ function HrItems({text, index}) {
         <div className="main-hr-list-item-name">{text.name}</div>
           <div className="main-hr-list-item-title">{text.prof}</div>
           <div className="main-hr-list-item-desc">{text.desc}</div>
-          <div onClick={()=> route(`/7ya/${link}`)} className='main-hr-list-cv'>More info</div>
+          <Link to={`/7ya/${link}`} target="_blank" className='main-hr-list-cv'>More info</Link>
        </div>
     </div>
   );

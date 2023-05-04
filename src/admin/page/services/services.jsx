@@ -22,6 +22,9 @@ function Services({props}) {
     const starCountRef = ref(db, `${props}/`);
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val()
+      if (data === null) {
+        setState([])
+      }
       setState(data)
     })
   }
