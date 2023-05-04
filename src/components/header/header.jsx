@@ -42,6 +42,11 @@ function Header() {
     document.querySelector('html').style.overflow = 'hidden'
   }
 
+  const openPop = () => {
+    document.getElementById('popUp').style.display = 'block'
+    document.querySelector('html').style.overflow = 'hidden'
+  }
+
   return (
     <div id='header' className="header">
       <div className="conteiner">
@@ -69,7 +74,7 @@ function Header() {
             <a target="_blank" rel="noreferrer" href='https://wa.me/+37258330637' className="header-link-soc links">
               <img src={wat} alt="" />
             </a>
-            <div data-da=".header-inner,960,0 " className="header-link-soc links">
+            <div onClick={openPop} data-da=".header-inner,960,0 " className="header-link-soc links">
               <img src={phone} alt="" />
             </div>
             <img onClick={open} data-da=".header-inner,960" className='header-burger' src={burger} alt="" />

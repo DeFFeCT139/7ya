@@ -41,14 +41,14 @@ function CustomersSettings() {
         const db = getDatabase();
         if (item.substr(0, 4) === 'edit') {
           set(ref(db, `Customers/mas/${item.substr(4, 10000)}`), {
-            title: 'cascasc',
+            title: link,
             edit: 'editC',
             link: link,
             img: stateIMg === null? state.img : stateIMg.name
           });
         } else if (item === 'new'){
           set(ref(db, `Customers/mas/${data.length}`), {
-            title: 'cascasc',
+            title: link,
             edit: 'editC',
             link: link,
             img: stateIMg.name 

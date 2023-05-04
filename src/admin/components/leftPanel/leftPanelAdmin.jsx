@@ -54,7 +54,7 @@ function LeftPanelAdmin() {
           <div className="LeftPanelAdmin-top-checked-block-xecked">
             <div onClick={setChecBox} className="container">
               <input defaultChecked={state} type="checkbox" className="checkbox" id="checkbox"/>
-              <label className="switch" htmlFor="checkbox">
+              <label defaultChecked={state} className="switch" htmlFor="checkbox">
                 <span className="slider"></span>
               </label>
             </div>
@@ -100,7 +100,7 @@ function LeftPanelAdmin() {
             </div>
           </div>
         </div>
-        <Link to={'/7ya/admin/preview'} className="LeftPanelAdmin-bottom-btn">Open preview page</Link>
+        <Link to={'/admin/preview'} className="LeftPanelAdmin-bottom-btn">Open preview page</Link>
       </div>
     </div>
   );

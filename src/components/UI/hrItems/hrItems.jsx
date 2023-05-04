@@ -29,7 +29,7 @@ function HrItems({text, index}) {
         <div className="main-hr-list-item-name">{text.name}</div>
           <div className="main-hr-list-item-title">{text.prof}</div>
           <div className="main-hr-list-item-desc">{text.desc}</div>
-          <Link to={`/7ya/${link}`} target="_blank" className='main-hr-list-cv'>More info</Link>
+          <Link to={`/${link}`} target="_blank" className='main-hr-list-cv'>More info</Link>
        </div>
     </div>
   );

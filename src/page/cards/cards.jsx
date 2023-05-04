@@ -5,6 +5,8 @@ import { avatar } from "./avatarDoonoad";
 import ContactsContent from "./page/contact";
 import LInks from "./page/links";
 import SkillsContent from "./page/skills";
+import { file } from "./fileDoonoad";
+import pluse from '../../image/Vector (7).svg'
 
 function Cards() {
   const params = useParams()
@@ -74,7 +76,6 @@ function Cards() {
     }
   }
 
-
   return (
     <div className="cards">
       <div className="cards-block">
@@ -83,9 +84,9 @@ function Cards() {
           <div className="cards-block-name">{state.name}</div>
           <div className="cards-block-prof">{state.prof}</div>
           <div className="cards-block-btns">
-            <a href="" className="cards-block-btn" download>Add to contacts</a>
-            <a href="" className="cards-block-btn" download>CV</a>
-            <a href="" className="cards-block-btn" download>Reference</a>
+            <a id='VSF' href={state === ''? '/':file("VSF",state.VSF)} className="cards-block-btn" download><img src={pluse} alt=""/> <span>Add to contacts</span></a>
+            <a id='CV' href={state === ''? '/':file("CV",state.CV)} className="cards-block-btn" download>CV</a>
+            <a id='Ref' href={state === ''? '/':file("Ref",state.Ref)} className="cards-block-btn" download>Reference</a>
           </div>
           <div className="cards-block-navs">
             <div onClick={setContact} className="cards-block-nav cards-block-nav-active">Contact</div>

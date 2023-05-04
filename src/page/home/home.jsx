@@ -1,9 +1,9 @@
-import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import LeftPanel from "../../components/leftPanel/leftPanel";
 import Main from "../../components/main/main";
 import { useEffect, useState } from 'react';
-import { getDatabase, ref, onValue, set,} from "firebase/database";
+import { getDatabase, ref, onValue,} from "firebase/database";
+import PopUp from "../../components/UI/popUp/popUp";
 
 function Home() {
 
@@ -25,6 +25,7 @@ function Home() {
     <div className="home">
       {state? 
       <div className="home-inner">
+        <PopUp/>
         <LeftPanel/>
         <Header/>
         <Main/>

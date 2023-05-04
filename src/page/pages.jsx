@@ -8,10 +8,10 @@ function Pages() {
   return (
     <div className="pages">
       <Routes>
-        <Route path="/7ya/" element={<Home  title='7ya'/>}/>
-        <Route path="/7ya/admin" element={<Admin title='Admin Panel'/>}/>
-        <Route path="/7ya/admin/preview" element={<Preview  title='7ya Preveiw' />}/>
-        <Route path="/7ya/:link" element={<Cards/>}/>
+        <Route path="/" element={<Home  title='7ya'/>}/>
+        <Route path="/admin" element={<Admin title='Admin Panel'/>}/>
+        <Route path="/admin/preview" element={<Preview  title='7ya Preveiw' />}/>
+        <Route path="/:link" element={<Cards/>}/>
       </Routes>
     </div>
   );
